@@ -1,12 +1,23 @@
 Spaceship bob = new Spaceship();
+Stars[] sky = new Stars[500];
 
 public void setup() 
 {
   size(900,600);
+  for (int i = 0; i < sky.length; i++)
+  {
+    sky[i] = new Stars();
+  }
+  
 }
 public void draw() 
 {
-  background(186,206,219);
+  background(106,94,135);
+  for (int i = 0; i < sky.length; i++)
+  {
+    sky[i].show();
+  }
+  
   bob.setDirectionX(0);
   bob.setDirectionY(0);
   bob.show();
@@ -15,7 +26,6 @@ public void draw()
 
 public void keyTyped()
 {
-  }
   //hyperspace
   if(key == 32)
   {
