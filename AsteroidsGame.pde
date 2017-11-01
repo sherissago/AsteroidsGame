@@ -15,15 +15,24 @@ public void draw()
 
 public void keyTyped()
 {
+  }
   //hyperspace
   if(key == 32)
   {
     bob.setX((int)(Math.random()*900));
     bob.setY((int)(Math.random()*600));
   }   
-  
-  if(key == 37)
+  if(key == 'q')
   {
-    bob.setDirectionX(2);
+    bob.accelerate(30);
+  }
+  if(key == 'z')
+  {
+    bob.turn(-15);
+  }
+  if(key == 'v')
+  {
+    bob.turn(15);
   }
 }
+
