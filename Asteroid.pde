@@ -48,7 +48,29 @@
    
    public void move()
    {
-     turn(mySpeed);
-     super.move();
+       myCenterX ++;
+     myCenterY ++;
+     myPointDirection += mySpeed;
+      //change the x and y coordinates by myDirectionX and myDirectionY       
+  
+
+    //wrap around screen    
+    if(myCenterX >width)
+    {     
+      myCenterX = 0;    
+    }    
+    else if (myCenterX<0)
+    {     
+      myCenterX = width;    
+    }    
+    if(myCenterY >height)
+    {    
+      myCenterY = 0;    
+    } 
+    
+    else if (myCenterY < 0)
+    {     
+      myCenterY = height;    
+    }   
    }
 }
