@@ -16,6 +16,8 @@ public void setup()
     belt[i].setX((int)(Math.random()*900));
     belt[i].setY((int)(Math.random()*600));  
   } */
+  
+  
   bob.setDirectionX(450);
   bob.setDirectionY(300);
   
@@ -41,12 +43,12 @@ public void draw()
   bob.setDirectionX(0);
   bob.setDirectionY(0);
   
-   ArrayList<Asteroid> belt = new ArrayList<Asteroid>();
+  ArrayList<Asteroid> belt = new ArrayList<Asteroid>();
   for (int i = 0; i < 10; i++)
   {
     belt.add(new Asteroid((int)(Math.random()*900),(int)(Math.random()*30)));
   }
-   for(int i = 0; i < belt.size(); i++)
+   for(int i = 0; i < 10; i++)
   {
     belt.get(i).show();
     belt.get(i).move();
@@ -62,7 +64,7 @@ public void keyTyped()
     bob.setY((int)(Math.random()*600));
   }   
   //other movements
-  else if(key == 'd'){bob.accelerate(7);}
+  else if(key == 'd'){bob.accelerate(10);}
   else if(key == 'z'){bob.turn(-15);}
   else if(key == 'v'){bob.turn(15);}
 }
