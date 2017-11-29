@@ -50,8 +50,9 @@ public void draw()
   }
    for(int i = 0; i < 10; i++)
   {
-    belt.get(i).show();
-    belt.get(i).move();
+    Asteroid allAsteroids = belt.get(i);
+    allAsteroids.move();
+    allAsteroids.show();
   }
 }
 
