@@ -1,6 +1,7 @@
-Spaceship bob = new Spaceship(450,300);
+Spaceship bob = new Spaceship();
 //Asteroid [] belt = new Asteroid[10];
 Stars[] sky = new Stars[500];
+ArrayList <Asteroid> belt = new ArrayList <Asteroid>();
 
 public void setup() 
 {
@@ -18,10 +19,13 @@ public void setup()
   } */
   
   
-  bob.setDirectionX(450);
-  bob.setDirectionY(300);
   
- 
+  
+  
+ for (int i = 0; i < 10; i++)
+ {
+   belt.add(new Asteroid());
+ }
  
   
 }
@@ -32,28 +36,29 @@ public void draw()
   {
     sky[i].show();
   }
-  /*for(int i = 0; i < belt.length; i++)
-  {
-   belt[i].show();
-   belt[i].move();
-  }*/
+  
+  
+ for (int i = 0; i < belt.size(); i++)
+ {
+   belt.get(i).show();
+   belt.get(i).move();
+   
+   if (dist(bob.getX(), bob.getY(), belt.get(i).getX(),belt.get(i).getY()) < 30)
+   {
+     belt.remove(i);
+   }
+ }
+ 
+ if(belt.size() <10)
+ {
+   belt.add(new Asteroid());
+ }
   
   bob.show();
   bob.move();
-  bob.setDirectionX(0);
-  bob.setDirectionY(0);
+ 
   
-  ArrayList<Asteroid> belt = new ArrayList<Asteroid>();
-  for (int i = 0; i < 10; i++)
-  {
-    belt.add(new Asteroid((int)(Math.random()*900),(int)(Math.random()*30)));
-  }
-   for(int i = 0; i < 10; i++)
-  {
-    Asteroid allAsteroids = belt.get(i);
-    allAsteroids.move();
-    allAsteroids.show();
-  }
+  
 }
 
 public void keyTyped()
@@ -65,7 +70,7 @@ public void keyTyped()
     bob.setY((int)(Math.random()*600));
   }   
   //other movements
-  else if(key == 'd'){bob.accelerate(10);}
+  else if(key == 'd'){bob.accelerate(1);}
   else if(key == 'z'){bob.turn(-15);}
   else if(key == 'v'){bob.turn(15);}
 }
