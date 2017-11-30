@@ -1,7 +1,7 @@
  class Asteroid extends Floater
 {
   public int mySpeed;
-  public Asteroid(int x, int y)
+  public Asteroid()
     {
       mySpeed = (int)(Math.random()* 4)-2;
       myColor = color(13,230,230);
@@ -9,31 +9,41 @@
       xCorners = new int[corners];
       yCorners = new int[corners];
       xCorners[0] = 0;
-      yCorners[0] = 20;
-      xCorners[1] = 6;
-      yCorners[1] = 10;
-      xCorners[2] = 20;
-      yCorners[2] = 13;
-      xCorners[3] = 15;
+      yCorners[0] = 100/2;
+      xCorners[1] = 30/2;
+      yCorners[1] = 50/2;
+      xCorners[2] = 100/2;
+      yCorners[2] = 65/2;
+      xCorners[3] = 75/2;
       yCorners[3] = 0;
-      xCorners[4] = 20;
-      yCorners[4] = -13;
-      xCorners[5] = 6;
-      yCorners[5] = -10;
+      xCorners[4] = 100/2;
+      yCorners[4] = -65/2;
+      xCorners[5] = 30/2;
+      yCorners[5] = -50/2;
       xCorners[6] = 0;
-      yCorners[6] = -20;
-      xCorners[7] = -6;
-      yCorners[7] = -10;
-      xCorners[8] = -20;
-      yCorners[8] = -13;
-      xCorners[9] = -15;
+      yCorners[6] = -100/2;
+      xCorners[7] = -30/2;
+      yCorners[7] = -50/2;
+      xCorners[8] = -100/2;
+      yCorners[8] = -65/2;
+      xCorners[9] = -75/2;
       yCorners[9] = 0;
-      xCorners[10] = -20;
-      yCorners[10] = 13;
-      xCorners[11] = -6;
-      yCorners[11] = 10;
-      xCorners[12] = 0;
-      yCorners[12] = 20;
+      xCorners[10] = -100/2;
+      yCorners[10] = 65/2;
+      xCorners[11] = -30/2;
+      yCorners[11] = 50/2;
+      xCorners[12] = 0/2;
+      yCorners[12] = 100/2;
+      
+      myCenterX = (int)(Math.random()*width);
+      myCenterY = (int)(Math.random()*height);
+      myPointDirection = (int)(Math.random()*360);
+      myDirectionX = (int)(Math.random()*4)-1;
+      myDirectionY = (int)(Math.random()*4)-1;
+      
+      
+      
+      
     }
    public void setX(int x){myCenterX = x;}
    public int getX(){return (int)myCenterX;}
@@ -48,7 +58,7 @@
    
    public void move()
    {
-       myCenterX ++;
+     myCenterX ++;
      myCenterY ++;
      myPointDirection += mySpeed;
       //change the x and y coordinates by myDirectionX and myDirectionY       
