@@ -68,6 +68,8 @@ public void keyTyped()
   {
     bob.setX((int)(Math.random()*900));
     bob.setY((int)(Math.random()*600));
+    bob.setDirectionX(0);
+    bob.setDirectionY(0);
   }   
   //other movements
   else if(key == 'd'){bob.accelerate(1);}
