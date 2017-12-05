@@ -1,4 +1,5 @@
 Spaceship bob = new Spaceship();
+Bullet bobbie = new Bullet(bob);
 //Asteroid [] belt = new Asteroid[10];
 Stars[] sky = new Stars[500];
 ArrayList <Asteroid> belt = new ArrayList <Asteroid>();
@@ -56,8 +57,8 @@ public void draw()
   
   bob.show();
   bob.move();
- 
-  
+  bobbie.show();
+  bobbie.move();
   
 }
 
