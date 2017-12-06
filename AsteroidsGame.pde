@@ -3,7 +3,7 @@ Bullet bobbie = new Bullet(bob);
 //Asteroid [] belt = new Asteroid[10];
 Stars[] sky = new Stars[500];
 ArrayList <Asteroid> belt = new ArrayList <Asteroid>();
-
+ArrayList <Bullet> pew = new ArrayList <Bullet>();
 public void setup() 
 {
   size(900,600);
@@ -19,11 +19,7 @@ public void setup()
     belt[i].setY((int)(Math.random()*600));  
   } */
   
-  
-  
-  
-  
- for (int i = 0; i < 10; i++)
+ for (int i = 0; i < 5; i++)
  {
    belt.add(new Asteroid());
  }
@@ -50,7 +46,7 @@ public void draw()
    }
  }
  
- if(belt.size() <10)
+ if(belt.size() <7)
  {
    belt.add(new Asteroid());
  }
@@ -76,4 +72,6 @@ public void keyTyped()
   else if(key == 'd'){bob.accelerate(1);}
   else if(key == 'z'){bob.turn(-15);}
   else if(key == 'v'){bob.turn(15);}
+  else if(key == 'q'){pew.add(new Bullet(bob));}
 }
+
