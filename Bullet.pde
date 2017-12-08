@@ -35,30 +35,11 @@ class Bullet extends Floater
     fill(0);
     ellipse((float)myCenterX, (float)myCenterY, 10,10);
   }   
-  
-   public void move ()   //move the floater in the current direction of travel
+  public void move ()   //move the floater in the current direction of travel
   {      
     //change the x and y coordinates by myDirectionX and myDirectionY       
-    myCenterX = bob.getX();
-    myCenterY = bob.getY();
-
-    //wrap around screen    
-    if(myCenterX >width)
-    {     
-      myCenterX = 0;    
-    }    
-    else if (myCenterX<0)
-    {     
-      myCenterX = width;    
-    }    
-    if(myCenterY >height)
-    {    
-      myCenterY = 0;    
-    } 
-    
-    else if (myCenterY < 0)
-    {     
-      myCenterY = height;    
-    }   
+    myCenterX += myDirectionX;    
+    myCenterY += myDirectionY;     
   }   
+ 
 }
