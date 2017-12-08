@@ -1,5 +1,5 @@
 Spaceship bob = new Spaceship();
-Bullet bobbie = new Bullet(bob);
+//Bullet bobbie = new Bullet(bob);
 //Asteroid [] belt = new Asteroid[10];
 Stars[] sky = new Stars[500];
 ArrayList <Asteroid> belt = new ArrayList <Asteroid>();
@@ -23,8 +23,12 @@ public void setup()
  {
    belt.add(new Asteroid());
  }
- 
-  
+ for(int i = 0; i < pew.size(); i++)
+ {
+   pew.add(new Bullet(bob));
+ }
+
+
 }
 public void draw() 
 {
@@ -40,9 +44,12 @@ public void draw()
    belt.get(i).show();
    belt.get(i).move();
    
-   if (dist(bob.getX(), bob.getY(), belt.get(i).getX(),belt.get(i).getY()) < 30)
+   for(int j = 0; j < pew.size(); j++)
+   {
+   if (dist(pew.get(j).getX(), pew.get(j).getY(), belt.get(i).getX(),belt.get(i).getY()) < 30)
    {
      belt.remove(i);
+   }
    }
  }
  
@@ -53,8 +60,13 @@ public void draw()
   
   bob.show();
   bob.move();
-  bobbie.show();
-  bobbie.move();
+ 
+   for (int i = 0; i < pew.size(); i++)
+   {
+     pew.get(i).move();
+     pew.get(i).show();
+   }
+
   
 }
 
@@ -74,4 +86,3 @@ public void keyTyped()
   else if(key == 'v'){bob.turn(15);}
   else if(key == 'q'){pew.add(new Bullet(bob));}
 }
-
