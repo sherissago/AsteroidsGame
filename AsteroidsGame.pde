@@ -44,7 +44,7 @@ public void draw()
    belt.get(i).show();
    belt.get(i).move();
    
-   for(int j = 0; j < pew.size(); j++)
+   for(int j = 0; j < pew.size()-1; j++)
    {
    if (dist(pew.get(j).getX(), pew.get(j).getY(), belt.get(i).getX(),belt.get(i).getY()) < 30)
    {
